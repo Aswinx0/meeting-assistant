@@ -1,0 +1,18 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+faster-whisper==1.0.3
+cohere==5.9.4
+pinecone==5.0.1
+python-dotenv==1.0.1
+pydantic==2.9.2
+
+# Package	         Why it's here
+# fastapi	         The web framework — defines your API endpoints (/ingest, /query)
+# uvicorn	         The server that actually runs FastAPI (FastAPI defines routes, uvicorn serves them over HTTP)
+# python-multipart	 Required by FastAPI to accept file uploads (audio files) — without it, upload endpoints fail
+# faster-whisper	 Speech-to-text. A faster reimplementation of OpenAI's Whisper (same model weights, optimized runtime)
+# cohere	         SDK for Cohere's embeddings + reranking + chat/generation APIs
+# pinecone	         SDK for the Pinecone vector database — where we store and search embeddings
+# python-dotenv	     Loads API keys from a .env file into your code, so keys aren't hardcoded
+# pydantic	         Used by FastAPI to validate request/response data shapes
